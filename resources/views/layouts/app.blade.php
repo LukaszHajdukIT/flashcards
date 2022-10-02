@@ -31,7 +31,7 @@
                 <a class="nav-link active" aria-current="page" href="{{ url('/') }}">{{ __('Home') }}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">{{ __('Sets') }}</a>
+                <a class="nav-link" href="{{ route('sets.index') }}">{{ __('Sets') }}</a>
               </li>
             </ul>
             <ul class="navbar-nav ms-auto">
