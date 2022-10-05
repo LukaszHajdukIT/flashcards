@@ -32,7 +32,10 @@
       <div class="row">
         @foreach (\App\Models\Set::all() as $set)
           <div class="col-md-4">
-            <a class="d-block text-white bg-secondary rounded px-3 py-3 mb-0" href="#">{{ $set->name }}</a>
+          <div class="text-white bg-second rounded px-3 py-3">
+            <a class="d-block text-white text-decoration-none" href="{{ route('sets.show', $set->id) }}">{{ $set->name }}</a>
+            <p class="mb-0">{{ $set->flashcards->count() }} terms</p>
+          </div>
           </div>
         @endforeach
       </div>

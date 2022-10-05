@@ -58,7 +58,11 @@ class SetController extends Controller
      */
     public function show($id)
     {
-        //
+        $set = Set::where('id', $id)->firstOrFail();
+
+        return view('sets.show', [
+          'set' => $set,
+        ]);
     }
 
     /**
