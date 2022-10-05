@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::controller('App\Http\Controllers\SetController')->group(function() {
   Route::get('/sets', 'index')->name('sets.index');
   Route::get('/sets/create', 'create')->name('sets.create');
-  Route::get('/sets/store', 'store')->name('sets.store');
+  Route::post('/sets/store', 'store')->name('sets.store');
 });
 
 Auth::routes();

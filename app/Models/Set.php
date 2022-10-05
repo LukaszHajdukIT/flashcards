@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Set
+class Set extends Model
 {
     use HasFactory;
 
@@ -16,11 +17,16 @@ class Set
     protected $fillable = [
         'name',
         'description',
-        'flashcard_id',
+        'user_id'
     ];
+
+    public function user()
+    {
+      return $this->belongsTo(User::class);
+    }
 
     public function flashcards()
     {
-      return $this->hasMany('App\Flashcard');
+      return $this->hasMany(Flashcard::class);
     }
 }

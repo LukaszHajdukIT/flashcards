@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Set;
 
 class SetController extends Controller
 {
@@ -34,7 +36,18 @@ class SetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $user = Auth::user();
+
+        $set = Set::create([
+          'name' => $input['name'],
+          'description' => $input['description'],
+          'user_id' => $user->id
+        ]);
+
+        return redirect()
+        ->route('sets.index')
+        ->with('status', 'Congratulations! Set was succesfully created.');
     }
 
     /**

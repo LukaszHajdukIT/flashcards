@@ -5,7 +5,8 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <form id="create-set-form" class="create-set-form" action="" method="post">
+          <form id="create-set-form" class="create-set-form" action="{{ route('sets.store') }}" method="post">
+            @csrf
             <div class="mb-3">
               <input type="text" class="form-control" name="name" placeholder="Enter the name">
             </div>

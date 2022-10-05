@@ -44,6 +44,6 @@ class User extends Authenticatable
 
     public function sets()
     {
-      $this->hasMany(Set::class);
+      return $this->hasMany(Set::class);
     }
 }

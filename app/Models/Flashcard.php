@@ -11,6 +11,6 @@ class Flashcard extends Model
 
     public function set()
     {
-      return $this->belongsTo('App\Set');
+      return $this->belongsTo(Set::class);
     }
 }
