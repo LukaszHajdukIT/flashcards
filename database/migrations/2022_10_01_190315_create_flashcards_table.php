@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('flashcards', function (Blueprint $table) {
             $table->id();
-            $table->text('front');
-            $table->text('back');
+            $table->text('term');
+            $table->text('definition');
             $table->unsignedBigInteger('set_id')->index();
             $table->foreign('set_id')->references('id')->on('sets');
             $table->timestamps();

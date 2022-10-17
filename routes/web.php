@@ -24,6 +24,14 @@ Route::controller('App\Http\Controllers\SetController')->group(function() {
   Route::get('/sets/{id}', 'show')->name('sets.show');
 });
 
+Route::controller('App\Http\Controllers\FlashcardController')->group(function() {
+  Route::get('/flashcards', 'index')->name('flashcards.index');
+  Route::get('/flashcards/create', 'create')->name('flashcards.create');
+  Route::post('/flashcards', 'store')->name('flashcards.store');
+  Route::get('/flashcards/{id}', 'show')->name('flashcards.show');
+  Route::post('/flashcards/{id}', 'destroy')->name('flashcards.destroy');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
